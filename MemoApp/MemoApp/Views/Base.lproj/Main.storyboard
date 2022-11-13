@@ -21,14 +21,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="체크리스트" id="NYq-ME-AX5">
-                        <imageReference key="image" image="checklist.unchecked" catalog="system" symbolScale="medium" variableValue="1"/>
+                        <imageReference key="image" image="checkmark.square" catalog="system" symbolScale="medium" variableValue="1"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1065" y="-784"/>
         </scene>
-        <!--버킷리스트-->
+        <!--리스트 정리-->
         <scene sceneID="Xtn-7E-zxo">
             <objects>
                 <viewController id="gwx-PY-qtP" customClass="ListViewController" customModule="MemoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                         <viewLayoutGuide key="safeArea" id="ogE-gA-4b0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="버킷리스트" id="VeX-Ee-8Ft">
+                    <tabBarItem key="tabBarItem" title="리스트 정리" id="VeX-Ee-8Ft">
                         <imageReference key="image" image="list.bullet.rectangle" catalog="system" symbolScale="medium"/>
                     </tabBarItem>
                 </viewController>
@@ -70,6 +70,7 @@
                 <tabBarController title="버킷리스트" automaticallyAdjustsScrollViewInsets="NO" id="Jbv-T2-Rh8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I0k-6J-OrV">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -85,7 +86,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checklist.unchecked" catalog="system" width="128" height="107"/>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">

@@ -17,6 +17,7 @@
 		517B3AB6291CEB63006537EE /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3AB5291CEB63006537EE /* ListViewController.swift */; };
 		517B3AB8291CEB70006537EE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3AB7291CEB70006537EE /* SettingViewController.swift */; };
 		517B3ABD291CEC55006537EE /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3ABC291CEC55006537EE /* ChecklistViewController.swift */; };
+		519E5BCF29210BB700BDDB20 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E5BCE29210BB700BDDB20 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		517B3AB5291CEB63006537EE /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		517B3AB7291CEB70006537EE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		517B3ABC291CEC55006537EE /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
+		519E5BCE29210BB700BDDB20 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		517B3A98291CE805006537EE /* MemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				519E5BCD29210B8C00BDDB20 /* Extensions */,
 				517B3AB2291CEAA2006537EE /* Models */,
 				517B3AB1291CEA90006537EE /* Views */,
 				517B3AB0291CEA7F006537EE /* Controller */,
@@ -125,6 +128,14 @@
 				517B3AB7291CEB70006537EE /* SettingViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		519E5BCD29210B8C00BDDB20 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				519E5BCE29210BB700BDDB20 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				517B3A9E291CE805006537EE /* ViewController.swift in Sources */,
 				517B3ABD291CEC55006537EE /* ChecklistViewController.swift in Sources */,
 				517B3AB6291CEB63006537EE /* ListViewController.swift in Sources */,
+				519E5BCF29210BB700BDDB20 /* Extensions.swift in Sources */,
 				517B3A9A291CE805006537EE /* AppDelegate.swift in Sources */,
 				517B3A9C291CE805006537EE /* SceneDelegate.swift in Sources */,
 				517B3AB8291CEB70006537EE /* SettingViewController.swift in Sources */,
