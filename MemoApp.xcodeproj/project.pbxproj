@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5136816F2927E53100C9D6C4 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5136816E2927E53100C9D6C4 /* NewTaskViewController.swift */; };
+		513681722927F93C00C9D6C4 /* CheckListDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513681712927F93C00C9D6C4 /* CheckListDatabaseManager.swift */; };
+		5156CDE5292B4AED007DD167 /* CheckBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5156CDE4292B4AED007DD167 /* CheckBottomSheetViewController.swift */; };
 		517B3A9A291CE805006537EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3A99291CE805006537EE /* AppDelegate.swift */; };
 		517B3A9C291CE805006537EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3A9B291CE805006537EE /* SceneDelegate.swift */; };
 		517B3A9E291CE805006537EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3A9D291CE805006537EE /* ViewController.swift */; };
@@ -18,15 +21,24 @@
 		517B3AB8291CEB70006537EE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3AB7291CEB70006537EE /* SettingViewController.swift */; };
 		517B3ABD291CEC55006537EE /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3ABC291CEC55006537EE /* ChecklistViewController.swift */; };
 		519E5BCF29210BB700BDDB20 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E5BCE29210BB700BDDB20 /* Extensions.swift */; };
-		519E5BD12921209200BDDB20 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E5BD02921209200BDDB20 /* PostViewController.swift */; };
 		51B6119F2925E70A00610588 /* CheckListOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B6119E2925E70A00610588 /* CheckListOneCell.swift */; };
 		51BF29BC2924B645008A28F9 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF29BB2924B645008A28F9 /* SettingsModel.swift */; };
 		51BF29C02924BF0B008A28F9 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF29BF2924BF0B008A28F9 /* SettingsCell.swift */; };
-		51BF29C22924C00E008A28F9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF29C12924C00E008A28F9 /* DataManager.swift */; };
+		51BF29C22924C00E008A28F9 /* SettingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF29C12924C00E008A28F9 /* SettingDataManager.swift */; };
 		51BF29C629255021008A28F9 /* CheckListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF29C529255021008A28F9 /* CheckListModel.swift */; };
+		51F8FC86292785D90041C665 /* NewAddCheckListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F8FC85292785D90041C665 /* NewAddCheckListModel.swift */; };
+		51FCBA0A2928E68E00BD07EC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FCBA092928E68E00BD07EC /* UIColor+Extension.swift */; };
+		51FCBA152928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FCBA132928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataClass.swift */; };
+		51FCBA162928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FCBA142928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataProperties.swift */; };
+		51FCBA1C2929387B00BD07EC /* CheckoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FCBA1B2929387B00BD07EC /* CheckoutCollectionViewCell.swift */; };
+		51FCBA2229293A0B00BD07EC /* ChecklistCollectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FCBA2129293A0B00BD07EC /* ChecklistCollectionDataManager.swift */; };
+		51FCBA2629293CBC00BD07EC /* CheckCollectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FCBA2529293CBC00BD07EC /* CheckCollectionDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5136816E2927E53100C9D6C4 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		513681712927F93C00C9D6C4 /* CheckListDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListDatabaseManager.swift; sourceTree = "<group>"; };
+		5156CDE4292B4AED007DD167 /* CheckBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBottomSheetViewController.swift; sourceTree = "<group>"; };
 		517B3A96291CE805006537EE /* MemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		517B3A99291CE805006537EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		517B3A9B291CE805006537EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,12 +52,18 @@
 		517B3AB7291CEB70006537EE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		517B3ABC291CEC55006537EE /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		519E5BCE29210BB700BDDB20 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		519E5BD02921209200BDDB20 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		51B6119E2925E70A00610588 /* CheckListOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListOneCell.swift; sourceTree = "<group>"; };
 		51BF29BB2924B645008A28F9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		51BF29BF2924BF0B008A28F9 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
-		51BF29C12924C00E008A28F9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		51BF29C12924C00E008A28F9 /* SettingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDataManager.swift; sourceTree = "<group>"; };
 		51BF29C529255021008A28F9 /* CheckListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListModel.swift; sourceTree = "<group>"; };
+		51F8FC85292785D90041C665 /* NewAddCheckListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddCheckListModel.swift; sourceTree = "<group>"; };
+		51FCBA092928E68E00BD07EC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		51FCBA132928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckListCoreDatabase+CoreDataClass.swift"; sourceTree = "<group>"; };
+		51FCBA142928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckListCoreDatabase+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		51FCBA1B2929387B00BD07EC /* CheckoutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutCollectionViewCell.swift; sourceTree = "<group>"; };
+		51FCBA2129293A0B00BD07EC /* ChecklistCollectionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistCollectionDataManager.swift; sourceTree = "<group>"; };
+		51FCBA2529293CBC00BD07EC /* CheckCollectionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCollectionDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		513681702927F92300C9D6C4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				51FCBA092928E68E00BD07EC /* UIColor+Extension.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		517B3A8D291CE805006537EE = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +104,7 @@
 		517B3A98291CE805006537EE /* MemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				513681702927F92300C9D6C4 /* Services */,
 				519E5BCD29210B8C00BDDB20 /* Extensions */,
 				517B3AB2291CEAA2006537EE /* Models */,
 				517B3AB1291CEA90006537EE /* Views */,
@@ -128,7 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				517B3ABC291CEC55006537EE /* ChecklistViewController.swift */,
-				519E5BD02921209200BDDB20 /* PostViewController.swift */,
+				5136816E2927E53100C9D6C4 /* NewTaskViewController.swift */,
+				5156CDE4292B4AED007DD167 /* CheckBottomSheetViewController.swift */,
 			);
 			path = CheckList;
 			sourceTree = "<group>";
@@ -161,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				51B6119E2925E70A00610588 /* CheckListOneCell.swift */,
+				51FCBA1B2929387B00BD07EC /* CheckoutCollectionViewCell.swift */,
 			);
 			path = CheckList;
 			sourceTree = "<group>";
@@ -169,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				51BF29BF2924BF0B008A28F9 /* SettingsCell.swift */,
-				51BF29C12924C00E008A28F9 /* DataManager.swift */,
+				51BF29C12924C00E008A28F9 /* SettingDataManager.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -185,7 +214,13 @@
 		51B6119B2925E62C00610588 /* CheckLsit */ = {
 			isa = PBXGroup;
 			children = (
+				51FCBA132928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataClass.swift */,
+				51FCBA142928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataProperties.swift */,
+				513681712927F93C00C9D6C4 /* CheckListDatabaseManager.swift */,
 				51BF29C529255021008A28F9 /* CheckListModel.swift */,
+				51F8FC85292785D90041C665 /* NewAddCheckListModel.swift */,
+				51FCBA2129293A0B00BD07EC /* ChecklistCollectionDataManager.swift */,
+				51FCBA2529293CBC00BD07EC /* CheckCollectionDataManager.swift */,
 			);
 			path = CheckLsit;
 			sourceTree = "<group>";
@@ -275,20 +310,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				519E5BD12921209200BDDB20 /* PostViewController.swift in Sources */,
-				51BF29C22924C00E008A28F9 /* DataManager.swift in Sources */,
+				51BF29C22924C00E008A28F9 /* SettingDataManager.swift in Sources */,
+				5136816F2927E53100C9D6C4 /* NewTaskViewController.swift in Sources */,
 				517B3A9E291CE805006537EE /* ViewController.swift in Sources */,
+				513681722927F93C00C9D6C4 /* CheckListDatabaseManager.swift in Sources */,
+				51FCBA0A2928E68E00BD07EC /* UIColor+Extension.swift in Sources */,
 				517B3ABD291CEC55006537EE /* ChecklistViewController.swift in Sources */,
+				51FCBA2229293A0B00BD07EC /* ChecklistCollectionDataManager.swift in Sources */,
+				5156CDE5292B4AED007DD167 /* CheckBottomSheetViewController.swift in Sources */,
 				517B3AB6291CEB63006537EE /* ListViewController.swift in Sources */,
 				519E5BCF29210BB700BDDB20 /* Extensions.swift in Sources */,
+				51FCBA152928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataClass.swift in Sources */,
+				51FCBA1C2929387B00BD07EC /* CheckoutCollectionViewCell.swift in Sources */,
 				517B3A9A291CE805006537EE /* AppDelegate.swift in Sources */,
 				51B6119F2925E70A00610588 /* CheckListOneCell.swift in Sources */,
 				51BF29BC2924B645008A28F9 /* SettingsModel.swift in Sources */,
+				51F8FC86292785D90041C665 /* NewAddCheckListModel.swift in Sources */,
 				517B3A9C291CE805006537EE /* SceneDelegate.swift in Sources */,
+				51FCBA2629293CBC00BD07EC /* CheckCollectionDataManager.swift in Sources */,
 				517B3AB8291CEB70006537EE /* SettingViewController.swift in Sources */,
 				51BF29C629255021008A28F9 /* CheckListModel.swift in Sources */,
 				517B3AA4291CE805006537EE /* MemoApp.xcdatamodeld in Sources */,
 				51BF29C02924BF0B008A28F9 /* SettingsCell.swift in Sources */,
+				51FCBA162928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

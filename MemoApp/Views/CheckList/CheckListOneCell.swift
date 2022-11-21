@@ -1,16 +1,13 @@
 import UIKit
 
-class CheckListCell: UITableViewCell {
+class CheckListOneCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
+    // MARK: - Properties
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        
-    }
-
+    @IBOutlet weak var checkListTextView: UILabel!
+    @IBOutlet weak var editCheckListButton: UIButton!
+    @IBOutlet weak var checkBoxButton: UIButton!
+    
+    
 }
+
