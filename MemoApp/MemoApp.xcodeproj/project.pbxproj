@@ -11,13 +11,17 @@
 		517B3A9C291CE805006537EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3A9B291CE805006537EE /* SceneDelegate.swift */; };
 		517B3A9E291CE805006537EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3A9D291CE805006537EE /* ViewController.swift */; };
 		517B3AA1291CE805006537EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517B3A9F291CE805006537EE /* Main.storyboard */; };
-		517B3AA4291CE805006537EE /* MemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 517B3AA2291CE805006537EE /* MemoApp.xcdatamodeld */; };
+		517B3AA4291CE805006537EE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 517B3AA2291CE805006537EE /* Model.xcdatamodeld */; };
 		517B3AA6291CE805006537EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517B3AA5291CE805006537EE /* Assets.xcassets */; };
 		517B3AA9291CE805006537EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517B3AA7291CE805006537EE /* LaunchScreen.storyboard */; };
 		517B3AB6291CEB63006537EE /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3AB5291CEB63006537EE /* ListViewController.swift */; };
 		517B3AB8291CEB70006537EE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3AB7291CEB70006537EE /* SettingViewController.swift */; };
 		517B3ABD291CEC55006537EE /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3ABC291CEC55006537EE /* ChecklistViewController.swift */; };
 		519E5BCF29210BB700BDDB20 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E5BCE29210BB700BDDB20 /* Extensions.swift */; };
+		952192322924D77200940008 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952192312924D77200940008 /* DataManager.swift */; };
+		952192342924DF5700940008 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952192332924DF5700940008 /* Model.swift */; };
+		9521923629259BEC00940008 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521923529259BEC00940008 /* NewListViewController.swift */; };
+		9521923829259BFF00940008 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521923729259BFF00940008 /* EditNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		517B3AB7291CEB70006537EE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		517B3ABC291CEC55006537EE /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		519E5BCE29210BB700BDDB20 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		952192312924D77200940008 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		952192332924DF5700940008 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model.swift; path = MemoApp/Data/Model.swift; sourceTree = SOURCE_ROOT; };
+		9521923529259BEC00940008 /* NewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
+		9521923729259BFF00940008 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,7 @@
 		517B3A98291CE805006537EE /* MemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				952192302924D76100940008 /* Data */,
 				519E5BCD29210B8C00BDDB20 /* Extensions */,
 				517B3AB2291CEAA2006537EE /* Models */,
 				517B3AB1291CEA90006537EE /* Views */,
@@ -76,7 +85,7 @@
 				517B3AA5291CE805006537EE /* Assets.xcassets */,
 				517B3AA7291CE805006537EE /* LaunchScreen.storyboard */,
 				517B3AAA291CE805006537EE /* Info.plist */,
-				517B3AA2291CE805006537EE /* MemoApp.xcdatamodeld */,
+				517B3AA2291CE805006537EE /* Model.xcdatamodeld */,
 			);
 			path = MemoApp;
 			sourceTree = "<group>";
@@ -102,6 +111,7 @@
 		517B3AB2291CEAA2006537EE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				952192332924DF5700940008 /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -118,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				517B3AB5291CEB63006537EE /* ListViewController.swift */,
+				9521923529259BEC00940008 /* NewListViewController.swift */,
+				9521923729259BFF00940008 /* EditNoteViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -136,6 +148,14 @@
 				519E5BCE29210BB700BDDB20 /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		952192302924D76100940008 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				952192312924D77200940008 /* DataManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,14 +229,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9521923629259BEC00940008 /* NewListViewController.swift in Sources */,
 				517B3A9E291CE805006537EE /* ViewController.swift in Sources */,
+				952192322924D77200940008 /* DataManager.swift in Sources */,
 				517B3ABD291CEC55006537EE /* ChecklistViewController.swift in Sources */,
 				517B3AB6291CEB63006537EE /* ListViewController.swift in Sources */,
 				519E5BCF29210BB700BDDB20 /* Extensions.swift in Sources */,
+				952192342924DF5700940008 /* Model.swift in Sources */,
 				517B3A9A291CE805006537EE /* AppDelegate.swift in Sources */,
 				517B3A9C291CE805006537EE /* SceneDelegate.swift in Sources */,
 				517B3AB8291CEB70006537EE /* SettingViewController.swift in Sources */,
-				517B3AA4291CE805006537EE /* MemoApp.xcdatamodeld in Sources */,
+				9521923829259BFF00940008 /* EditNoteViewController.swift in Sources */,
+				517B3AA4291CE805006537EE /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,13 +460,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		517B3AA2291CE805006537EE /* MemoApp.xcdatamodeld */ = {
+		517B3AA2291CE805006537EE /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				517B3AA3291CE805006537EE /* MemoApp.xcdatamodel */,
 			);
 			currentVersion = 517B3AA3291CE805006537EE /* MemoApp.xcdatamodel */;
-			path = MemoApp.xcdatamodeld;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
