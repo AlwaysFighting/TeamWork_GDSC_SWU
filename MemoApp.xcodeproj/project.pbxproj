@@ -39,6 +39,13 @@
 		5136816E2927E53100C9D6C4 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		513681712927F93C00C9D6C4 /* CheckListDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListDatabaseManager.swift; sourceTree = "<group>"; };
 		5156CDE4292B4AED007DD167 /* CheckBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBottomSheetViewController.swift; sourceTree = "<group>"; };
+		952192322924D77200940008 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952192312924D77200940008 /* DataManager.swift */; };
+		952192342924DF5700940008 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952192332924DF5700940008 /* Model.swift */; };
+		9521923629259BEC00940008 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521923529259BEC00940008 /* NewListViewController.swift */; };
+		9521923829259BFF00940008 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521923729259BFF00940008 /* EditNoteViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
 		517B3A96291CE805006537EE /* MemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		517B3A99291CE805006537EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		517B3A9B291CE805006537EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +71,10 @@
 		51FCBA1B2929387B00BD07EC /* CheckoutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutCollectionViewCell.swift; sourceTree = "<group>"; };
 		51FCBA2129293A0B00BD07EC /* ChecklistCollectionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistCollectionDataManager.swift; sourceTree = "<group>"; };
 		51FCBA2529293CBC00BD07EC /* CheckCollectionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCollectionDataManager.swift; sourceTree = "<group>"; };
+		952192312924D77200940008 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		952192332924DF5700940008 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model.swift; path = MemoApp/Data/Model.swift; sourceTree = SOURCE_ROOT; };
+		9521923529259BEC00940008 /* NewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
+		9521923729259BFF00940008 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				513681702927F92300C9D6C4 /* Services */,
+				952192302924D76100940008 /* Data */,
 				519E5BCD29210B8C00BDDB20 /* Extensions */,
 				517B3AB2291CEAA2006537EE /* Models */,
 				517B3AB1291CEA90006537EE /* Views */,
@@ -147,6 +159,7 @@
 				51B6119C2925E63400610588 /* List */,
 				51B6119B2925E62C00610588 /* CheckLsit */,
 				51B6119A2925E62700610588 /* Settings */,
+				952192332924DF5700940008 /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				517B3AB5291CEB63006537EE /* ListViewController.swift */,
+				9521923529259BEC00940008 /* NewListViewController.swift */,
+				9521923729259BFF00940008 /* EditNoteViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -237,6 +252,13 @@
 			children = (
 			);
 			path = List;
+		};
+		952192302924D76100940008 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				952192312924D77200940008 /* DataManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +355,18 @@
 				517B3AA4291CE805006537EE /* MemoApp.xcdatamodeld in Sources */,
 				51BF29C02924BF0B008A28F9 /* SettingsCell.swift in Sources */,
 				51FCBA162928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataProperties.swift in Sources */,
+				9521923629259BEC00940008 /* NewListViewController.swift in Sources */,
+				517B3A9E291CE805006537EE /* ViewController.swift in Sources */,
+				952192322924D77200940008 /* DataManager.swift in Sources */,
+				517B3ABD291CEC55006537EE /* ChecklistViewController.swift in Sources */,
+				517B3AB6291CEB63006537EE /* ListViewController.swift in Sources */,
+				519E5BCF29210BB700BDDB20 /* Extensions.swift in Sources */,
+				952192342924DF5700940008 /* Model.swift in Sources */,
+				517B3A9A291CE805006537EE /* AppDelegate.swift in Sources */,
+				517B3A9C291CE805006537EE /* SceneDelegate.swift in Sources */,
+				517B3AB8291CEB70006537EE /* SettingViewController.swift in Sources */,
+				9521923829259BFF00940008 /* EditNoteViewController.swift in Sources */,
+				517B3AA4291CE805006537EE /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

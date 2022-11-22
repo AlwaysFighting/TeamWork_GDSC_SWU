@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CheckListCoreDatabase" representedClassName="CheckListCoreDatabase" syncable="YES">
         <attribute name="addCollection" optional="YES" attributeType="String"/>
         <attribute name="checkListColor" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="checkListMemo" optional="YES" attributeType="String"/>
         <attribute name="isChecked" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="whatSteps" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="insertDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
 </model>
