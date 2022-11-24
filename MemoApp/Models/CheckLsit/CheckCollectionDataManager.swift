@@ -1,5 +1,5 @@
 import UIKit
 
-struct systemMaekCollectionViewData {
+struct systemMakeCollectionViewData {
     var makeCollectionText: String
 }

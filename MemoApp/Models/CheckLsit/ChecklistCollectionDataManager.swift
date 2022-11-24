@@ -2,24 +2,24 @@ import UIKit
 
 class ChecklistCollectionDataManager {
 
-    private var makeCollectionTextArray: [systemMaekCollectionViewData] = []
+    private var makeCollectionTextArray: [systemMakeCollectionViewData] = []
 
     func makeCollectionData(){
         makeCollectionTextArray = [
-            systemMaekCollectionViewData(makeCollectionText: "등산 ⛰️"),
-            systemMaekCollectionViewData(makeCollectionText: "운동"),
-            systemMaekCollectionViewData(makeCollectionText: "요리 🍰"),
-            systemMaekCollectionViewData(makeCollectionText: "책 읽기"),
-            systemMaekCollectionViewData(makeCollectionText: "책 읽기"),
-            systemMaekCollectionViewData(makeCollectionText: "책 읽기"),
-            systemMaekCollectionViewData(makeCollectionText: "책 읽기"),
-            systemMaekCollectionViewData(makeCollectionText: "책 읽기"),
-            systemMaekCollectionViewData(makeCollectionText: "책 읽기"),
-            systemMaekCollectionViewData(makeCollectionText: "+ 추가")
+            systemMakeCollectionViewData(makeCollectionText: "등산 ⛰️"),
+            systemMakeCollectionViewData(makeCollectionText: "운동"),
+            systemMakeCollectionViewData(makeCollectionText: "요리 🍰"),
+            systemMakeCollectionViewData(makeCollectionText: "책 읽기"),
+            systemMakeCollectionViewData(makeCollectionText: "책 읽기"),
+            systemMakeCollectionViewData(makeCollectionText: "책 읽기"),
+            systemMakeCollectionViewData(makeCollectionText: "책 읽기"),
+            systemMakeCollectionViewData(makeCollectionText: "책 읽기"),
+            systemMakeCollectionViewData(makeCollectionText: "책 읽기"),
+            systemMakeCollectionViewData(makeCollectionText: "+ 추가")
         ]
     }
     
-    func getMakeCollectionData() -> [systemMaekCollectionViewData] {
+    func getMakeCollectionData() -> [systemMakeCollectionViewData] {
         return makeCollectionTextArray
     }
     

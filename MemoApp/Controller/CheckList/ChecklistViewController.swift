@@ -1,26 +1,44 @@
 import UIKit
 
+protocol MyTableViewCellDelegate: AnyObject {
+    func didTapButton(with title: String)
+}
+
 class ChecklistViewController: UIViewController, UIScrollViewDelegate {
 
     // MARK: - Properties
     
     // Identifier
+    weak var delegate:MyTableViewCellDelegate?
+    
     private let topReuseIdentifier = "CheckoutCollectionViewCell"
     private let SteptableReuseIdentifer = "CheckListOneCell"
     private let showNewTask = "showNewTask"
     private let editNewTask = "editNewTask"
     private let showNewDetailCheckList = "showNewDetailCheckList"
     
-    // Define the array to use in the Table.
-    //private let iOSItems: [String] = ["iOS12", "iOS11", "iOS10", "iOS9", "iOS8", "iOS7"]
-    private let AOSItems: [String] = ["9.x", "8.x", "7.x", "6.x"]
-    
     // Define the array to be used in Section.
     private let sections: [String] = ["Step 1", "Step 2", "Step 3"]
     
-    // 테이블뷰의 데이터를 표시하기 위한 배열
-    var makeCollectionTextArray: [systemMaekCollectionViewData] = []
+    let step1 = ["유산소 운동 1시간"]
+    let step2 = ["필라테스 한 달 이용", "헬스장 PT 한 달 이용"]
+    let step3 = ["체지방률 XX 달성!"]
+    
+    // section 사이 간격 조정
+    let cellSpacingHeight: CGFloat = 100
+    
+    // TableView 의 데이터를 표시하기 위한 배열
+    var makeTableViewOneTextArray : [systemMakeTableStepOneViewData] = []
+    var makeTableViewTwoTextArray : [systemMakeTableStepTwoViewData] = []
+    var makeTableViewThreeTextArray : [systemMakeTableStepThreeViewData] = []
+    var checkTableDataManager = ChecklistTableViewDataManager()
+    
+    // Collection 뷰의 데이터를 표시하기 위한 배열
+    var makeCollectionTextArray: [systemMakeCollectionViewData] = []
     var CheckCollectionDataManager = ChecklistCollectionDataManager()
+    
+    // 테이블뷰 인덱스 알기
+    var indexPathRow: Int  = 0
     
     // collectionView 마지막 열 구하기
     var collectionCount : Int = 0
@@ -51,7 +69,7 @@ class ChecklistViewController: UIViewController, UIScrollViewDelegate {
         configureUI()
         dataSourceCollection()
         cheklistCollectionUI()
-        setuplongPressMove()
+        hideKeyboarOnTap() 
     }
 
     override func viewWillLayoutSubviews() {
@@ -63,28 +81,8 @@ class ChecklistViewController: UIViewController, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
     }
     
-   
+
     // MARK: - Helpers
-    
-    func showSimpleActionSheet(controller: UIViewController) {
-        let alert = UIAlertController(title: .none, message: "", preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (_) in
-            print("User click Edit button")
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
-            print("User click Delete button")
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { (_) in
-            print("User click Dismiss button")
-        }))
-        
-        self.present(alert, animated: true, completion: {
-            print("completion block")
-        })
-    }
     
     // 태그가 10개 이상으로 추가하려고 하면 나오는 경고창
     func showErrorMessage(withTitle title: String, message: String) {
@@ -123,22 +121,26 @@ class ChecklistViewController: UIViewController, UIScrollViewDelegate {
         
         // Tableview dataSource
         self.stepsTableview.dataSource  = self
-        
+        self.stepsTableview.delegate = self
         self.stepsTableview.allowsSelection = false
         
         // stepsTableview Cell Drag & Drop
         self.stepsTableview.dragInteractionEnabled = true
         self.stepsTableview.dragDelegate = self
         self.stepsTableview.dropDelegate = self
+        self.stepsTableview.isUserInteractionEnabled = true
+        self.stepsTableview.allowsSelection = true
         
         CheckCollectionDataManager.makeCollectionData()
         makeCollectionTextArray = CheckCollectionDataManager.getMakeCollectionData()
-    }
-    
-    private func setuplongPressMove(){
+        
+        checkTableDataManager.makeTableData()
+        makeTableViewOneTextArray = checkTableDataManager.getMakeTableOneData()
+        makeTableViewTwoTextArray = checkTableDataManager.getMakeTableTwoData()
+        makeTableViewThreeTextArray = checkTableDataManager.getMakeTableThreeData()
         
     }
-
+    
     func configureUI() {
         
         // 색상 설정
@@ -163,7 +165,23 @@ class ChecklistViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    public func hideKeyboarOnTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardAction))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+
+    @objc private func hideKeyboardAction() {
+        self.view.endEditing(true)
+    }
+    
+    
     // MARK: - Actions
+    
+    @objc func alertControllerBackgroundTapped()
+    {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func taskPostButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: showNewTask, sender: nil)
@@ -174,11 +192,36 @@ class ChecklistViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func editTableButtonTapped(_ sender: Any) {
-        print("editTableButtonTapped")
+    
+        
+        let alert = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
+        
+        let edit = UIAlertAction(title: "Edit", style: .default, handler: { action in
+            self.editButtonTapped()
+        })
+        
+        let action = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            self.deleteButtonTapped()
+        })
+        
+        let cancle = UIAlertAction(title: "Cancle", style: .cancel)
+        
+        alert.addAction(edit)
+        alert.addAction(action)
+        alert.addAction(cancle)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // edit 눌렀을 때 action
+    func editButtonTapped() {
         
         
     }
     
+    // delete Button Tapped..
+    func deleteButtonTapped() {
+        
+    }
     
 }
 
@@ -265,6 +308,8 @@ extension ChecklistViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
+
 extension ChecklistViewController:UITableViewDelegate {
     
     // Row Editable true
@@ -272,15 +317,84 @@ extension ChecklistViewController:UITableViewDelegate {
         return true
     }
     
-    // Move Row Instance Method
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        print("\(sourceIndexPath.row) -> \(destinationIndexPath.row)")
-        let moveCell = self.makeCollectionTextArray[sourceIndexPath.row]
-        self.makeCollectionTextArray.remove(at: sourceIndexPath.row)
-        self.makeCollectionTextArray.insert(moveCell, at: destinationIndexPath.row)
+    // 센션별 간격 정하기
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(50)
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat(10)
+    }
+
+    // 셀 선택시
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 0 {
+            print("didSelectRowAt \(indexPath.row) 1")
+        }else if indexPath.section == 1 {
+            print("didSelectRowAt \(indexPath.row) 2")
+        }else {
+            print("didSelectRowAt \(indexPath.row) 3")
+        }
+        
+        indexPathRow = indexPath.row
+        
+        let alert = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
+        
+        let edit = UIAlertAction(title: "Edit", style: .default, handler: { action in
+            self.editButtonTapped()
+        })
+        
+        let action = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            tableView.beginUpdates()
+            
+        })
+        
+        let cancle = UIAlertAction(title: "Cancle", style: .cancel)
+        
+        alert.addAction(edit)
+        alert.addAction(action)
+        alert.addAction(cancle)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    // Move Row Instance Method
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        print("\(sourceIndexPath.row) -> \(destinationIndexPath.row)")
+        
+        let moveCell = self.makeCollectionTextArray[sourceIndexPath.row]
+        
+        if sourceIndexPath.section == destinationIndexPath.section {
+            self.makeCollectionTextArray.remove(at: sourceIndexPath.row)
+            self.makeCollectionTextArray.insert(moveCell, at: destinationIndexPath.row)
+        } else {
+            self.makeCollectionTextArray.remove(at: sourceIndexPath.row)
+            self.makeCollectionTextArray.insert(moveCell, at: destinationIndexPath.row)
+        }
+        
+    }
+    
+    // 같은 섹션끼리만 이동 가능
+    func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+
+        let sourceSection = sourceIndexPath.section
+        let destSection = proposedDestinationIndexPath.section
+
+        if destSection < sourceSection {
+            return IndexPath(row: 0, section: sourceSection)
+        } else if destSection > sourceSection {
+            return IndexPath(row: self.tableView(tableView, numberOfRowsInSection:sourceSection)-1, section: sourceSection)
+        }
+
+        return sourceIndexPath.section  == proposedDestinationIndexPath.section ? proposedDestinationIndexPath : sourceIndexPath
+    }
+    
+    
+
 }
+
 
 
 // MARK: - UITableViewDataSource
@@ -294,26 +408,51 @@ extension ChecklistViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section]
     }
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        // section 의 수대로 달라짐
+        if section == 0 {
+            return makeTableViewOneTextArray.count
+        }else if section == 1{
+            return makeTableViewTwoTextArray.count
+        }else {
+            return makeTableViewThreeTextArray.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        tableView.isScrollEnabled = false
+    
         let tableCell = tableView.dequeueReusableCell(withIdentifier: SteptableReuseIdentifer) as! CheckListOneCell
         
-        tableCell.selectionStyle = .none
+        tableView.isScrollEnabled = false
         
+        if indexPath.section == 0 {
+            let checkListOneData = makeTableViewOneTextArray[indexPath.row]
+            tableCell.checkListTextView.text = checkListOneData.stepOneList
+        } else if indexPath.section == 1 {
+            let checkListTwoData = makeTableViewTwoTextArray[indexPath.row]
+            tableCell.checkListTextView.text = checkListTwoData.stepTwoList
+        }else {
+            let checkListThreeData = makeTableViewThreeTextArray[indexPath.row]
+            tableCell.checkListTextView.text = checkListThreeData.stepThreeList
+        }
+        
+        
+        // tableCell UI
+        
+        tableCell.selectionStyle = .none
         tableCell.backgroundColor = .BackgroundColor
         
         tableCell.layer.masksToBounds = true
-        tableCell.layer.cornerRadius = 10
+        tableCell.clipsToBounds = true
         tableCell.layer.borderWidth = 1
-        // tableCell.layer.shadowOffset = CGSize(width: 1, height: 1)
         tableCell.layer.borderColor = UIColor.darkGray.withAlphaComponent(0.1).cgColor
+        tableCell.layer.cornerRadius = 10
+       
+
+        
+        // tableCell.layer.shadowOffset = CGSize(width: 1, height: 1)
+        
         return tableCell
     }
 }
