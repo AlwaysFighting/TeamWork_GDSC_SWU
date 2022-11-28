@@ -8,7 +8,6 @@ struct systemMakeTableStepTwoViewData {
     let stepTwoList: String?
 }
 
-
 struct systemMakeTableStepThreeViewData {
     let stepThreeList: String?
 }

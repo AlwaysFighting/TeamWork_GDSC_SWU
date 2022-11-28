@@ -1,5 +1,6 @@
 import UIKit
 import Combine
+import ContextMenuSwift
 
 class NewTaskViewController: UIViewController {
     
@@ -9,6 +10,7 @@ class NewTaskViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var containerViewBottomConstaint: NSLayoutConstraint!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var stepNumberButton: UIButton!
     @IBOutlet weak var palateButton: UIButton!
     
 
@@ -48,7 +50,7 @@ class NewTaskViewController: UIViewController {
         containerView.layer.cornerRadius = 20
         backgroundView.backgroundColor = UIColor.init(white: 0.3, alpha: 0.4)
         containerViewBottomConstaint.constant = -containerView.frame.height
-        addNewTaskTextField.keyboardAppearance = .dark
+        addNewTaskTextField.keyboardAppearance = .default
         addNewTaskTextField.setPlaceholder(color: .systemGray2)
     }
     
@@ -74,6 +76,17 @@ class NewTaskViewController: UIViewController {
         print("colorPalateButtonTapped")
     }
     
+    @IBAction func stepButtonTapped(_ sender: UIButton) {
+        print("stepButtonTapped")
+        let step1 = ContextMenuItemWithImage(title: "Step1", image: .checkmark)
+        let step2 = ContextMenuItemWithImage(title: "Step2", image: .checkmark)
+        let step3 = ContextMenuItemWithImage(title: "Step3", image: .checkmark)
+        
+        CM.items = [step1, step2, step3]
+        CM.showMenu(viewTargeted: saveButton, delegate: self, animated: true)
+    }
+    
+    
     @IBAction func saveChecklistButtonTapped(_ sender: Any) {
         print("saveChecklistButtonTapped")
     }
@@ -96,4 +109,25 @@ class NewTaskViewController: UIViewController {
         dismiss(animated: true)
     }
 
+}
+
+
+extension NewTaskViewController: ContextMenuDelegate {
+    func contextMenuDidSelect(_ contextMenu: ContextMenuSwift.ContextMenu, cell: ContextMenuSwift.ContextMenuCell, targetedView: UIView, didSelect item: ContextMenuSwift.ContextMenuItem, forRowAt index: Int) -> Bool {
+        return true
+    }
+    
+    func contextMenuDidDeselect(_ contextMenu: ContextMenuSwift.ContextMenu, cell: ContextMenuSwift.ContextMenuCell, targetedView: UIView, didSelect item: ContextMenuSwift.ContextMenuItem, forRowAt index: Int) {
+        
+    }
+    
+    func contextMenuDidAppear(_ contextMenu: ContextMenuSwift.ContextMenu) {
+        
+    }
+    
+    func contextMenuDidDisappear(_ contextMenu: ContextMenuSwift.ContextMenu) {
+        
+    }
+    
+    
 }
