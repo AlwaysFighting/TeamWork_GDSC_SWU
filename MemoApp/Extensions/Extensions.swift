@@ -12,6 +12,8 @@ extension UIColor {
     
 }
 
+// MARK: - UIScrollView
+
 extension UIScrollView {
     
     func resizeScrollViewContentSize() {
@@ -22,6 +24,8 @@ extension UIScrollView {
         self.contentSize = contentRect.size
     }
 }
+
+// MARK: - UIImage
 
 extension UIImage {
     func toPngString() -> String? {
@@ -35,7 +39,30 @@ extension UIImage {
     }
 }
 
+// MARK: - UITextField
+
 extension UITextField {
+    
+    func Gounderlined(){
+            let border = CALayer()
+            let width = CGFloat(1.0)
+            border.borderColor = UIColor.TabColor?.cgColor
+            border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
+            border.borderWidth = width
+            self.layer.addSublayer(border)
+            self.layer.masksToBounds = true
+        }
+    
+    func Nounderlined(){
+            let border = CALayer()
+            let width = CGFloat(1.0)
+            border.borderColor = UIColor.systemGray5.cgColor
+            border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
+            border.borderWidth = width
+            self.layer.addSublayer(border)
+            self.layer.masksToBounds = true
+        }
+    
     func setPlaceholder(color: UIColor) {
         guard let string = self.placeholder else {
             return
@@ -43,6 +70,8 @@ extension UITextField {
         attributedPlaceholder = NSAttributedString(string: string, attributes: [.foregroundColor: color])
     }
 }
+
+// MARK: - UIView
 
 extension UIView {
     enum VerticalLocation {
@@ -71,5 +100,36 @@ extension UIView {
         self.layer.shadowOffset = offset
         self.layer.shadowOpacity = opacity
         self.layer.shadowRadius = radius
+    }
+}
+
+// MARK: - CALayer
+// TableView 옆에 라인 생성하기
+extension CALayer {
+    
+    func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat, height: CGFloat) {
+        
+        let border = CALayer()
+        
+        switch edge {
+        case UIRectEdge.top:
+            border.frame = CGRect(x: 0, y: 0, width: frame.width, height: thickness)
+            
+        case UIRectEdge.bottom:
+            border.frame = CGRect(x:0, y: frame.height - thickness, width: frame.width, height:thickness)
+            
+        case UIRectEdge.left:
+            border.frame = CGRect(x:0, y:0, width: thickness, height: height)
+            
+        case UIRectEdge.right:
+            border.frame = CGRect(x: frame.width - thickness, y: 0, width: thickness, height: height)
+            
+        default: do {}
+            
+        }
+        
+        border.backgroundColor = color.cgColor
+        
+        addSublayer(border)
     }
 }

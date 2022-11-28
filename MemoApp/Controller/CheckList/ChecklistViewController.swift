@@ -11,6 +11,11 @@ class ChecklistViewController: UIViewController, UIScrollViewDelegate {
     // Identifier
     weak var delegate:MyTableViewCellDelegate?
     
+    // Persist the CALayer
+    var rightBorder: CALayer?
+    
+    let borderWidth: CGFloat = 5
+    
     private let topReuseIdentifier = "CheckoutCollectionViewCell"
     private let SteptableReuseIdentifer = "CheckListOneCell"
     private let showNewTask = "showNewTask"
@@ -19,10 +24,6 @@ class ChecklistViewController: UIViewController, UIScrollViewDelegate {
     
     // Define the array to be used in Section.
     private let sections: [String] = ["Step 1", "Step 2", "Step 3"]
-    
-    let step1 = ["유산소 운동 1시간"]
-    let step2 = ["필라테스 한 달 이용", "헬스장 PT 한 달 이용"]
-    let step3 = ["체지방률 XX 달성!"]
     
     // section 사이 간격 조정
     let cellSpacingHeight: CGFloat = 100
@@ -68,21 +69,31 @@ class ChecklistViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         configureUI()
         dataSourceCollection()
+        configureRefreshControl () 
         cheklistCollectionUI()
-        hideKeyboarOnTap() 
+        hideKeyboarOnTap()
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        stepScrollView.contentSize = CGSize(width: self.view.frame.size.width, height: stepsTableview.contentSize.height + 100)
+        stepScrollView.contentSize = CGSize(width: self.view.frame.size.width, height: stepsTableview.contentSize.height + 150)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    
 
     // MARK: - Helpers
+    
+    // Add the refresh control to your UIScrollView object.
+    func configureRefreshControl () {
+        stepScrollView.refreshControl = UIRefreshControl()
+        stepScrollView.refreshControl?.addTarget(self, action:
+                                          #selector(handleRefreshControl),
+                                          for: .valueChanged)
+    }
     
     // 태그가 10개 이상으로 추가하려고 하면 나오는 경고창
     func showErrorMessage(withTitle title: String, message: String) {
@@ -94,16 +105,23 @@ class ChecklistViewController: UIViewController, UIScrollViewDelegate {
     // 태그 추가하기
     func showAlertWithTextField() {
         let alertController = UIAlertController(title: "태그 추가하기", message: nil, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Add", style: .default) { (_) in
+        
+        let confirmAction = UIAlertAction(title: "Add", style: .default) { [self] (_) in
             if let txtField = alertController.textFields?.first, let text = txtField.text {
-                // operations
-                print("Text==>" + text)
+                print("Text ==>" + text)
+            
+                makeCollectionTextArray[self.collectionCount - 1] = systemMakeCollectionViewData(makeCollectionText: text)
+
+                self.makeCollectionTextArray.append(systemMakeCollectionViewData(makeCollectionText: "+ 추가"))
+                self.collectionView.reloadData()
             }
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
         alertController.addTextField { (textField) in
             textField.placeholder = "Tag"
         }
+        
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -163,12 +181,24 @@ class ChecklistViewController: UIViewController, UIScrollViewDelegate {
         PostButton.layer.shadowColor = UIColor.gray.withAlphaComponent(0.6).cgColor
         PostButton.layer.shadowOffset = CGSizeMake(5 , 7)
         
+        // TableView 옆 라인 생성
+        
+        
     }
     
     public func hideKeyboarOnTap() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardAction))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleRefreshControl() {
+       // Update your content…
+
+       // Dismiss the refresh control.
+       DispatchQueue.main.async {
+          self.stepScrollView.refreshControl?.endRefreshing()
+       }
     }
 
     @objc private func hideKeyboardAction() {
@@ -184,44 +214,45 @@ class ChecklistViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func taskPostButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: showNewTask, sender: nil)
+       // performSegue(withIdentifier: showNewTask, sender: nil)
     }
     
     @IBAction func checkBoxTableButtonTapped(_ sender: UIButton) {
         print("checkBoxTableList")
     }
     
-    @IBAction func editTableButtonTapped(_ sender: Any) {
+    @IBAction func editTableButtonTapped(_ sender: UIButton) {
+        
+        print("editTableButtonTapped")
+        
+//        let alert = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
+//
+//        let edit = UIAlertAction(title: "Edit", style: .default, handler: { action in
+//            self.editButtonTapped()
+//        })
+//
+//        let action = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+//            self.deleteButtonTapped()
+//        })
+//
+//        let cancle = UIAlertAction(title: "Cancle", style: .cancel)
+//
+//        alert.addAction(edit)
+//        alert.addAction(action)
+//        alert.addAction(cancle)
+//        present(alert, animated: true, completion: nil)
+//    }
+//
+//    // edit 눌렀을 때 action
+//    func editButtonTapped() {
+//
+//    }
+//
+//    // delete Button Tapped..
+//    func deleteButtonTapped() {
+//
+   }
     
-        
-        let alert = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
-        
-        let edit = UIAlertAction(title: "Edit", style: .default, handler: { action in
-            self.editButtonTapped()
-        })
-        
-        let action = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-            self.deleteButtonTapped()
-        })
-        
-        let cancle = UIAlertAction(title: "Cancle", style: .cancel)
-        
-        alert.addAction(edit)
-        alert.addAction(action)
-        alert.addAction(cancle)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    // edit 눌렀을 때 action
-    func editButtonTapped() {
-        
-        
-    }
-    
-    // delete Button Tapped..
-    func deleteButtonTapped() {
-        
-    }
     
 }
 
@@ -284,7 +315,7 @@ extension ChecklistViewController: UICollectionViewDataSource {
         
         if(collectionCell.checkListLabel.text?.count == 1) {
             collectionCell.contentView.layer.masksToBounds = true
-            collectionCell.contentView.layer.cornerRadius = 5.0
+            collectionCell.contentView.layer.cornerRadius = collectionCell.frame.height/2
             
         }else {
             collectionCell.contentView.layer.cornerRadius = 17
@@ -312,6 +343,29 @@ extension ChecklistViewController: UICollectionViewDataSource {
 
 extension ChecklistViewController:UITableViewDelegate {
     
+    // Section Custom
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        
+        let label = UILabel()
+        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+        
+        if section == 0 {
+            label.text = sections[section]
+        } else if section == 1{
+            label.text = sections[section]
+        } else {
+            label.text = sections[section]
+        }
+        
+        label.textColor = .darkGray
+        label.font = .boldSystemFont(ofSize: 17)
+        
+        headerView.addSubview(label)
+        
+        return headerView
+    }
+    
     // Row Editable true
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -337,32 +391,30 @@ extension ChecklistViewController:UITableViewDelegate {
             print("didSelectRowAt \(indexPath.row) 3")
         }
         
-        indexPathRow = indexPath.row
+        //indexPathRow = indexPath.row
         
-        let alert = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
-        
-        let edit = UIAlertAction(title: "Edit", style: .default, handler: { action in
-            self.editButtonTapped()
-        })
-        
-        let action = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-            tableView.beginUpdates()
-            
-        })
-        
-        let cancle = UIAlertAction(title: "Cancle", style: .cancel)
-        
-        alert.addAction(edit)
-        alert.addAction(action)
-        alert.addAction(cancle)
-        present(alert, animated: true, completion: nil)
+//        let alert = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
+//
+//        let edit = UIAlertAction(title: "Edit", style: .default, handler: { action in
+//            self.editButtonTapped()
+//        })
+//
+//        let action = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+//            tableView.beginUpdates()
+//
+//        })
+//
+//        let cancle = UIAlertAction(title: "Cancle", style: .cancel)
+//
+//        alert.addAction(edit)
+//        alert.addAction(action)
+//        alert.addAction(cancle)
+//        present(alert, animated: true, completion: nil)
         
     }
     
     // Move Row Instance Method
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
-        print("\(sourceIndexPath.row) -> \(destinationIndexPath.row)")
         
         let moveCell = self.makeCollectionTextArray[sourceIndexPath.row]
         
@@ -385,16 +437,13 @@ extension ChecklistViewController:UITableViewDelegate {
         if destSection < sourceSection {
             return IndexPath(row: 0, section: sourceSection)
         } else if destSection > sourceSection {
-            return IndexPath(row: self.tableView(tableView, numberOfRowsInSection:sourceSection)-1, section: sourceSection)
+            return IndexPath(row: self.tableView(tableView, numberOfRowsInSection:sourceSection) - 1, section: sourceSection)
         }
 
         return sourceIndexPath.section  == proposedDestinationIndexPath.section ? proposedDestinationIndexPath : sourceIndexPath
     }
     
-    
-
 }
-
 
 
 // MARK: - UITableViewDataSource
@@ -405,9 +454,9 @@ extension ChecklistViewController: UITableViewDataSource {
             return sections.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section]
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return sections[section]
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // section 의 수대로 달라짐
@@ -426,12 +475,17 @@ extension ChecklistViewController: UITableViewDataSource {
         
         tableView.isScrollEnabled = false
         
+        // MARK: - Line
+        
+        
         if indexPath.section == 0 {
             let checkListOneData = makeTableViewOneTextArray[indexPath.row]
             tableCell.checkListTextView.text = checkListOneData.stepOneList
+        
         } else if indexPath.section == 1 {
             let checkListTwoData = makeTableViewTwoTextArray[indexPath.row]
             tableCell.checkListTextView.text = checkListTwoData.stepTwoList
+            
         }else {
             let checkListThreeData = makeTableViewThreeTextArray[indexPath.row]
             tableCell.checkListTextView.text = checkListThreeData.stepThreeList
@@ -448,10 +502,6 @@ extension ChecklistViewController: UITableViewDataSource {
         tableCell.layer.borderWidth = 1
         tableCell.layer.borderColor = UIColor.darkGray.withAlphaComponent(0.1).cgColor
         tableCell.layer.cornerRadius = 10
-       
-
-        
-        // tableCell.layer.shadowOffset = CGSize(width: 1, height: 1)
         
         return tableCell
     }
@@ -478,3 +528,4 @@ extension ChecklistViewController: UITableViewDropDelegate {
     func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) { }
     
 }
+

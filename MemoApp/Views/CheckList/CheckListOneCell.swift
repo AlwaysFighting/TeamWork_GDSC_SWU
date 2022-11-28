@@ -7,5 +7,7 @@ class CheckListOneCell: UITableViewCell {
     @IBOutlet weak var checkListTextView: UITextField!
     @IBOutlet weak var editCheckListButton: UIButton!
     @IBOutlet weak var checkBoxButton: UIButton!
+    
+    
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510E0E0329339F460090A2A2 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510E0E0229339F460090A2A2 /* EditViewController.swift */; };
 		5136816F2927E53100C9D6C4 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5136816E2927E53100C9D6C4 /* NewTaskViewController.swift */; };
 		513681722927F93C00C9D6C4 /* CheckListDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513681712927F93C00C9D6C4 /* CheckListDatabaseManager.swift */; };
 		514B3210292E79D0007866A1 /* ChecklistTableViewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B320F292E79D0007866A1 /* ChecklistTableViewDataManager.swift */; };
@@ -23,11 +24,11 @@
 		517B3AB8291CEB70006537EE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3AB7291CEB70006537EE /* SettingViewController.swift */; };
 		517B3ABD291CEC55006537EE /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B3ABC291CEC55006537EE /* ChecklistViewController.swift */; };
 		519E5BCF29210BB700BDDB20 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E5BCE29210BB700BDDB20 /* Extensions.swift */; };
+		51AC97E829328C33005C46EB /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AC97E729328C33005C46EB /* AddTaskViewController.swift */; };
 		51B6119F2925E70A00610588 /* CheckListOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B6119E2925E70A00610588 /* CheckListOneCell.swift */; };
 		51BF29BC2924B645008A28F9 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF29BB2924B645008A28F9 /* SettingsModel.swift */; };
 		51BF29C02924BF0B008A28F9 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF29BF2924BF0B008A28F9 /* SettingsCell.swift */; };
 		51BF29C22924C00E008A28F9 /* SettingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF29C12924C00E008A28F9 /* SettingDataManager.swift */; };
-		51F8FC86292785D90041C665 /* NewAddCheckListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F8FC85292785D90041C665 /* NewAddCheckListModel.swift */; };
 		51FCBA0A2928E68E00BD07EC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FCBA092928E68E00BD07EC /* UIColor+Extension.swift */; };
 		51FCBA152928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FCBA132928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataClass.swift */; };
 		51FCBA162928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FCBA142928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataProperties.swift */; };
@@ -38,9 +39,11 @@
 		952192342924DF5700940008 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952192332924DF5700940008 /* Model.swift */; };
 		9521923629259BEC00940008 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521923529259BEC00940008 /* NewListViewController.swift */; };
 		9521923829259BFF00940008 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521923729259BFF00940008 /* EditNoteViewController.swift */; };
+		FAFF21BB7B288ABD476B0625 /* Pods_MemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA07DA1A5C009E33E72E1D8 /* Pods_MemoApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		510E0E0229339F460090A2A2 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		5136816E2927E53100C9D6C4 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		513681712927F93C00C9D6C4 /* CheckListDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListDatabaseManager.swift; sourceTree = "<group>"; };
 		514B320F292E79D0007866A1 /* ChecklistTableViewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTableViewDataManager.swift; sourceTree = "<group>"; };
@@ -59,11 +62,11 @@
 		517B3AB7291CEB70006537EE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		517B3ABC291CEC55006537EE /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		519E5BCE29210BB700BDDB20 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		51AC97E729328C33005C46EB /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		51B6119E2925E70A00610588 /* CheckListOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListOneCell.swift; sourceTree = "<group>"; };
 		51BF29BB2924B645008A28F9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		51BF29BF2924BF0B008A28F9 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		51BF29C12924C00E008A28F9 /* SettingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDataManager.swift; sourceTree = "<group>"; };
-		51F8FC85292785D90041C665 /* NewAddCheckListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddCheckListModel.swift; sourceTree = "<group>"; };
 		51FCBA092928E68E00BD07EC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		51FCBA132928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckListCoreDatabase+CoreDataClass.swift"; sourceTree = "<group>"; };
 		51FCBA142928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckListCoreDatabase+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -74,6 +77,9 @@
 		952192332924DF5700940008 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model.swift; path = MemoApp/Data/Model.swift; sourceTree = SOURCE_ROOT; };
 		9521923529259BEC00940008 /* NewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
 		9521923729259BFF00940008 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		AE07044DA6B45F2577F80106 /* Pods-MemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoApp.release.xcconfig"; path = "Target Support Files/Pods-MemoApp/Pods-MemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		CBA07DA1A5C009E33E72E1D8 /* Pods_MemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA44CFA5D231ABC13C983CBE /* Pods-MemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoApp.debug.xcconfig"; path = "Target Support Files/Pods-MemoApp/Pods-MemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFF21BB7B288ABD476B0625 /* Pods_MemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +107,8 @@
 			children = (
 				517B3A98291CE805006537EE /* MemoApp */,
 				517B3A97291CE805006537EE /* Products */,
+				F4A5FBF1B00B8528AF511647 /* Pods */,
+				D03E74DC49C7070278118AC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +178,8 @@
 				517B3ABC291CEC55006537EE /* ChecklistViewController.swift */,
 				5136816E2927E53100C9D6C4 /* NewTaskViewController.swift */,
 				5156CDE4292B4AED007DD167 /* CheckBottomSheetViewController.swift */,
+				51AC97E729328C33005C46EB /* AddTaskViewController.swift */,
+				510E0E0229339F460090A2A2 /* EditViewController.swift */,
 			);
 			path = CheckList;
 			sourceTree = "<group>";
@@ -231,7 +242,6 @@
 				51FCBA132928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataClass.swift */,
 				51FCBA142928E8AC00BD07EC /* CheckListCoreDatabase+CoreDataProperties.swift */,
 				513681712927F93C00C9D6C4 /* CheckListDatabaseManager.swift */,
-				51F8FC85292785D90041C665 /* NewAddCheckListModel.swift */,
 				51FCBA2129293A0B00BD07EC /* ChecklistCollectionDataManager.swift */,
 				51FCBA2529293CBC00BD07EC /* CheckCollectionDataManager.swift */,
 				514B320F292E79D0007866A1 /* ChecklistTableViewDataManager.swift */,
@@ -262,6 +272,23 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		D03E74DC49C7070278118AC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBA07DA1A5C009E33E72E1D8 /* Pods_MemoApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4A5FBF1B00B8528AF511647 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA44CFA5D231ABC13C983CBE /* Pods-MemoApp.debug.xcconfig */,
+				AE07044DA6B45F2577F80106 /* Pods-MemoApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -269,9 +296,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 517B3AAD291CE805006537EE /* Build configuration list for PBXNativeTarget "MemoApp" */;
 			buildPhases = (
+				CAF3A973A301B76F4AA191AB /* [CP] Check Pods Manifest.lock */,
 				517B3A92291CE805006537EE /* Sources */,
 				517B3A93291CE805006537EE /* Frameworks */,
 				517B3A94291CE805006537EE /* Resources */,
+				1A3A37034C3C1323BAB0291A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -328,6 +357,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1A3A37034C3C1323BAB0291A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemoApp/Pods-MemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemoApp/Pods-MemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MemoApp/Pods-MemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAF3A973A301B76F4AA191AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MemoApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		517B3A92291CE805006537EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -348,7 +419,6 @@
 				517B3A9A291CE805006537EE /* AppDelegate.swift in Sources */,
 				51B6119F2925E70A00610588 /* CheckListOneCell.swift in Sources */,
 				51BF29BC2924B645008A28F9 /* SettingsModel.swift in Sources */,
-				51F8FC86292785D90041C665 /* NewAddCheckListModel.swift in Sources */,
 				517B3A9C291CE805006537EE /* SceneDelegate.swift in Sources */,
 				51FCBA2629293CBC00BD07EC /* CheckCollectionDataManager.swift in Sources */,
 				514B3210292E79D0007866A1 /* ChecklistTableViewDataManager.swift in Sources */,
@@ -359,6 +429,8 @@
 				9521923629259BEC00940008 /* NewListViewController.swift in Sources */,
 				517B3A9E291CE805006537EE /* ViewController.swift in Sources */,
 				952192322924D77200940008 /* DataManager.swift in Sources */,
+				510E0E0329339F460090A2A2 /* EditViewController.swift in Sources */,
+				51AC97E829328C33005C46EB /* AddTaskViewController.swift in Sources */,
 				517B3ABD291CEC55006537EE /* ChecklistViewController.swift in Sources */,
 				517B3AB6291CEB63006537EE /* ListViewController.swift in Sources */,
 				519E5BCF29210BB700BDDB20 /* Extensions.swift in Sources */,
@@ -510,6 +582,7 @@
 		};
 		517B3AAE291CE805006537EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA44CFA5D231ABC13C983CBE /* Pods-MemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -538,6 +611,7 @@
 		};
 		517B3AAF291CE805006537EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE07044DA6B45F2577F80106 /* Pods-MemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
